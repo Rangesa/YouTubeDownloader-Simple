@@ -1,0 +1,47 @@
+# Rust build artifacts
+target/
+**/*.rs.bk
+*.pdb
+
+# Cargo lock file (keep for reproducible builds)
+# Cargo.lock
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Documentation
+README.md
+LICENSE
+docs/
+
+# Downloads directory
+downloads/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+
+# Test files
+tests/

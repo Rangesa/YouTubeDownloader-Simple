@@ -1,0 +1,36 @@
+services:
+  ytdl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: youtube-batch-downloader:latest
+    container_name: ytdl
+
+    # ボリュームマウント
+    volumes:
+      # ダウンロード先ディレクトリ
+      - ./downloads:/downloads
+
+      # Windows: Chrome Cookie
+      - ${LOCALAPPDATA}/Google/Chrome/User Data:/chrome:ro
+
+      # macOS: Chrome Cookie（コメントアウト）
+      # - ~/Library/Application Support/Google/Chrome:/chrome:ro
+
+      # Linux: Chrome Cookie（コメントアウト）
+      # - ~/.config/google-chrome:/chrome:ro
+
+    # 環境変数
+    environment:
+      - OUTPUT_DIR=/downloads
+
+    # ネットワークモード
+    network_mode: bridge
+
+    # 注意: コマンドは docker-compose run で指定します
+    # 例: docker-compose run --rm ytdl "https://youtube.com/watch?v=VIDEO_ID"
+
+# 名前付きボリューム（オプション）
+volumes:
+  downloads:
+    driver: local

@@ -1,0 +1,29 @@
+# Rust
+/target
+Cargo.lock
+*.exe
+*.pdb
+
+# ダウンロード済みファイル
+downloads/
+downloaded.txt
+*.mp4
+*.mkv
+*.webm
+*.mp3
+*.m4a
+
+# OS固有
+.DS_Store
+Thumbs.db
+nul
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 一時ファイル
+srcmain_simple.rs
